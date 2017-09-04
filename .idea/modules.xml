@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lts-cycle-mission.iml" filepath="$PROJECT_DIR$/lts-cycle-mission.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lts-job-client/lts-job-client.iml" filepath="$PROJECT_DIR$/lts-job-client/lts-job-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lts-job-tracker/lts-job-tracker.iml" filepath="$PROJECT_DIR$/lts-job-tracker/lts-job-tracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lts-task-tracker/lts-task-tracker.iml" filepath="$PROJECT_DIR$/lts-task-tracker/lts-task-tracker.iml" />
+    </modules>
+  </component>
+</project>
