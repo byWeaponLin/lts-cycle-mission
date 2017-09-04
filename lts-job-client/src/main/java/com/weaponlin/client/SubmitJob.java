@@ -4,13 +4,10 @@ import com.github.ltsopensource.core.domain.Job;
 import com.github.ltsopensource.core.json.JSON;
 import com.github.ltsopensource.jobclient.JobClient;
 import com.github.ltsopensource.jobclient.domain.Response;
-import com.google.common.collect.Lists;
 import com.weaponlin.job.GithubJob;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class SubmitJob implements InitializingBean {
@@ -22,11 +19,12 @@ public class SubmitJob implements InitializingBean {
     private JobClient jobClient;
 
     private String generateJobs() {
-        List<GithubJob> jobs = Lists.newArrayList(
-                new GithubJob().setType("follower").setParam("followers").setUrl("https://api.github.com/users/byWeaponLin/followers"),
-                new GithubJob().setType("following").setParam("following").setUrl("https://api.github.com/users/byWeaponLin/following")
-        );
-        return JSON.toJSONString(jobs);
+//        List<GithubJob> jobs = Lists.newArrayList(
+//                new GithubJob().setType("follower").setParam("followers").setUrl("https://api.github.com/users/byWeaponLin/followers"),
+//                new GithubJob().setType("following").setParam("following").setUrl("https://api.github.com/users/byWeaponLin/following")
+//        );
+        GithubJob job = new GithubJob().setType("follower").setParam("followers").setUrl("https://api.github.com/users/byWeaponLin/followers");
+        return JSON.toJSONString(job);
     }
 
     public void afterPropertiesSet() throws Exception {
@@ -34,7 +32,7 @@ public class SubmitJob implements InitializingBean {
 
         Job job = new Job();
         job.setTaskId("t_555");
-        job.setParam("jobs", generateJobs());
+        job.setParam("job", generateJobs());
         job.setTaskTrackerNodeGroup("test_trade_TaskTracker");
         job.setNeedFeedback(true);
         job.setReplaceOnExist(true);        // 当任务队列中存在这个任务的时候，是否替换更新

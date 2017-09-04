@@ -1,0 +1,5 @@
+com/weaponlin/client/CompleteJob.class
+com/weaponlin/client/MasterNodeChangeListener.class
+com/weaponlin/Application.class
+com/weaponlin/job/GithubJob.class
+com/weaponlin/client/SubmitJob.class
